@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="form-container">
+
+<div class="form-box">
+
+<h2>Emergency Blood Request</h2>
+
+<form action="/emergency" method="POST">
+
+<input type="text"
+name="patient_name"
+placeholder="Patient Name"
+required>
+
+<select name="blood_group" required>
+<option value="">Required Blood Group</option>
+<option>A+</option>
+<option>A-</option>
+<option>B+</option>
+<option>B-</option>
+<option>AB+</option>
+<option>AB-</option>
+<option>O+</option>
+<option>O-</option>
+</select>
+
+<input type="text"
+name="hospital"
+placeholder="Hospital Name"
+required>
+
+<input type="text"
+name="city"
+placeholder="City"
+required>
+
+<input type="text"
+name="phone"
+placeholder="Contact Number"
+required>
+
+<label>Required Date</label>
+
+<input type="date"
+name="required_date"
+required>
+
+<textarea
+name="notes"
+rows="4"
+placeholder="Additional Notes"></textarea>
+
+<button type="submit" class="btn">
+Submit Request
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+{% endblock %}

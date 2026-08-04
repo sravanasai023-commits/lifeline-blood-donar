@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="form-container">
+
+<div class="form-box">
+
+<h2>Find Blood Donor</h2>
+
+<form method="POST" action="/find_blood">
+
+<select name="blood_group" required>
+<option value="">Select Blood Group</option>
+<option>A+</option>
+<option>A-</option>
+<option>B+</option>
+<option>B-</option>
+<option>AB+</option>
+<option>AB-</option>
+<option>O+</option>
+<option>O-</option>
+</select>
+
+<input type="text"
+       name="city"
+       placeholder="Enter City"
+       required>
+
+<button type="submit" class="btn">
+Search Donors
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<section class="results">
+
+<h2>Available Donors</h2>
+
+{% if donors %}
+
+<div class="cards">
+
+{% for donor in donors %}
+
+<div class="card">
+
+<h3>{{ donor[1] }}</h3>
+
+<p><strong>Blood Group:</strong> {{ donor[6] }}</p>
+
+<p><strong>City:</strong> {{ donor[7] }}</p>
+
+<p><strong>Phone:</strong> {{ donor[3] }}</p>
+
+<p><strong>Status:</strong> {{ donor[10] }}</p>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% else %}
+
+<p style="text-align:center;">
+No matching donors found.
+</p>
+
+{% endif %}
+
+</section>
+
+{% endblock %}

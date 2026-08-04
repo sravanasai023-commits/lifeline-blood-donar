@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero">
+
+    <div class="hero-text">
+        <h1>Donate Blood,<br>Save Lives ❤️</h1>
+
+        <p>
+            Every blood donor is a lifesaver. Join LifeLink and help patients
+            find blood quickly during emergencies.
+        </p>
+
+        <a href="/register" class="btn">Become a Donor</a>
+        <a href="/find_blood" class="btn btn-outline">Find Blood</a>
+
+    </div>
+
+    <div class="hero-image">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Blood Donation">
+    </div>
+
+</section>
+
+<!-- Statistics -->
+<section class="stats">
+
+    <div class="card">
+        <h2>500+</h2>
+        <p>Registered Donors</p>
+    </div>
+
+    <div class="card">
+        <h2>120+</h2>
+        <p>Blood Requests</p>
+    </div>
+
+    <div class="card">
+        <h2>300+</h2>
+        <p>Lives Saved</p>
+    </div>
+
+    <div class="card">
+        <h2>8</h2>
+        <p>Blood Groups</p>
+    </div>
+
+</section>
+
+<!-- Why Choose -->
+<section class="why">
+
+    <h2>Why Choose LifeLink?</h2>
+
+    <div class="features">
+
+        <div class="feature">
+            <h3>⚡ Fast Search</h3>
+            <p>Find nearby blood donors within seconds.</p>
+        </div>
+
+        <div class="feature">
+            <h3>📍 Nearby Donors</h3>
+            <p>Search by blood group and city.</p>
+        </div>
+
+        <div class="feature">
+            <h3>🛡 Safe & Secure</h3>
+            <p>Your data is protected and secure.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- How It Works -->
+<section class="steps">
+
+<h2>How It Works</h2>
+
+<div class="step-box">
+
+<div class="step">
+<h3>1</h3>
+<p>Register</p>
+</div>
+
+<div class="step">
+<h3>2</h3>
+<p>Search</p>
+</div>
+
+<div class="step">
+<h3>3</h3>
+<p>Contact</p>
+</div>
+
+<div class="step">
+<h3>4</h3>
+<p>Donate</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+
+<h2>Testimonials</h2>
+
+<div class="testimonial">
+
+<p>
+"LifeLink helped us find blood within minutes.
+It truly saved a life."
+</p>
+
+<h4>- Happy User</h4>
+
+</div>
+
+</section>
+
+{% endblock %}
