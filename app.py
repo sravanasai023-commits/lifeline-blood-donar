@@ -209,27 +209,21 @@ def contact():
 # -----------------------------
 @app.route('/dashboard')
 def dashboard():
-    @app.route('/dashboard')
-def dashboard():
-
+    
     conn = sqlite3.connect(DATABASE)
     cursor = conn.cursor()
 
-    # Total donors
+    # Total Donors
     cursor.execute("SELECT COUNT(*) FROM donors")
     donors = cursor.fetchone()[0]
 
-    # Total blood requests
+    # Total Blood Requests
     cursor.execute("SELECT COUNT(*) FROM blood_requests")
     requests = cursor.fetchone()[0]
 
-    # All donor details
-    cursor.execute("SELECT * FROM donors")
-    donor_list = cursor.fetchall()
-
-    # Blood groups available
-    cursor.execute("SELECT DISTINCT blood_group FROM donors")
-    blood_groups = cursor.fetchall()
+    # Blood Groups Count
+    cursor.execute("SELECT COUNT(DISTINCT blood_group) FROM donors")
+    blood_groups = cursor.fetchone()[0]
 
     conn.close()
 
@@ -237,9 +231,9 @@ def dashboard():
         "dashboard.html",
         donors=donors,
         requests=requests,
-        donor_list=donor_list,
         blood_groups=blood_groups
     )
+
 
 # -----------------------------
 if __name__=="__main__":

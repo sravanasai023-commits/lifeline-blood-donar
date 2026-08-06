@@ -8,10 +8,10 @@
 
 <div class="dashboard-cards">
 
-<div class="dashboard-card">
-<h2><a href="#donors">{{ donors }}</a></h2>
+<a href="/donors" class="dashboard-card">
+<h2>{{ donors }}</h2>
 <p>Total Donors</p>
-</div>
+</a>
 
 <div class="dashboard-card">
 <h2>{{ requests }}</h2>
@@ -23,55 +23,28 @@
 <p>Emergency Support</p>
 </div>
 
-<div class="dashboard-card">
-<h2><a href="#bloodgroups">8</a></h2>
+<a href="/blood_groups" class="dashboard-card">
+<h2>{{ blood_groups }}</h2>
 <p>Blood Groups</p>
-</div>
+</a>
 
 </div>
 
 <div class="dashboard-actions">
 
-<a href="/register" class="btn">Register Donor</a>
+<a href="/register" class="btn">
+Register Donor
+</a>
 
-<a href="/find_blood" class="btn btn-outline">Find Blood</a>
+<a href="/find_blood" class="btn btn-outline">
+Find Blood
+</a>
 
-<a href="/emergency" class="btn">Emergency Request</a>
+<a href="/emergency" class="btn">
+Emergency Request
+</a>
 
 </div>
-
-<hr>
-
-<h2 id="donors">Registered Donors</h2>
-
-<table border="1" cellpadding="8" cellspacing="0" width="100%">
-<tr>
-<th>Name</th>
-<th>Blood Group</th>
-<th>City</th>
-<th>Phone</th>
-</tr>
-
-{% for donor in donor_list %}
-<tr>
-<td>{{ donor[1] }}</td>
-<td>{{ donor[6] }}</td>
-<td>{{ donor[7] }}</td>
-<td>{{ donor[3] }}</td>
-</tr>
-{% endfor %}
-
-</table>
-
-<br><br>
-
-<h2 id="bloodgroups">Available Blood Groups</h2>
-
-<ul>
-{% for group in blood_groups %}
-<li>{{ group[0] }}</li>
-{% endfor %}
-</ul>
 
 </section>
 
